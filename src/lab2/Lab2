@@ -1,0 +1,22 @@
+grammar Lab2;
+
+@nonterminals
+e : t e_ ;
+e_ : PLUS t e_ | MINUS t e_ | EPS ;
+t : f t_;
+t_ : MUL f t_ | EPS ;
+f : LB e RB | NUM | FUN LB x RB | MINUS f ;
+x : e x_ ;
+x_ : COMMA e x_ | EPS ;
+
+@start : e
+
+@terminals
+PLUS : "\\+";
+MINUS : "-";
+MUL : "\\*";
+LB : "\\(";
+RB : "\\)";
+NUM : "[0-9]+";
+FUN : "[a-zA-Z]+";
+COMMA : ",";

@@ -1,0 +1,93 @@
+graph {
+n0 [label="e (x : -95667)"]
+n0 -- n1
+n1 [label="t (x : 1)"]
+n1 -- n2
+n2 [label="f (x : 1)"]
+n2 -- n3
+n3 [label="NUM: 1"]
+n1 -- n4
+n4 [label="t_ (x : 1)"]
+n4 -- n5
+n5 [label="EPS"]
+n0 -- n6
+n6 [label="e_ (x : -95667)"]
+n6 -- n7
+n7 [label="PLUS: +"]
+n6 -- n8
+n8 [label="t (x : -66886)"]
+n8 -- n9
+n9 [label="f (x : -2)"]
+n9 -- n10
+n10 [label="LB: ("]
+n9 -- n11
+n11 [label="e (x : -2)"]
+n11 -- n12
+n12 [label="t (x : 3)"]
+n12 -- n13
+n13 [label="f (x : 3)"]
+n13 -- n14
+n14 [label="NUM: 3"]
+n12 -- n15
+n15 [label="t_ (x : 3)"]
+n15 -- n16
+n16 [label="EPS"]
+n11 -- n17
+n17 [label="e_ (x : -2)"]
+n17 -- n18
+n18 [label="MINUS: -"]
+n17 -- n19
+n19 [label="t (x : 5)"]
+n19 -- n20
+n20 [label="f (x : 5)"]
+n20 -- n21
+n21 [label="NUM: 5"]
+n19 -- n22
+n22 [label="t_ (x : 5)"]
+n22 -- n23
+n23 [label="EPS"]
+n17 -- n24
+n24 [label="e_ (x : -2)"]
+n24 -- n25
+n25 [label="EPS"]
+n9 -- n26
+n26 [label="RB: )"]
+n8 -- n27
+n27 [label="t_ (x : -66886)"]
+n27 -- n28
+n28 [label="MUL: *"]
+n27 -- n29
+n29 [label="f (x : 33443)"]
+n29 -- n30
+n30 [label="NUM: 33443"]
+n27 -- n31
+n31 [label="t_ (x : -66886)"]
+n31 -- n32
+n32 [label="EPS"]
+n6 -- n33
+n33 [label="e_ (x : -95667)"]
+n33 -- n34
+n34 [label="MINUS: -"]
+n33 -- n35
+n35 [label="t (x : 28782)"]
+n35 -- n36
+n36 [label="f (x : 123)"]
+n36 -- n37
+n37 [label="NUM: 123"]
+n35 -- n38
+n38 [label="t_ (x : 28782)"]
+n38 -- n39
+n39 [label="MUL: *"]
+n38 -- n40
+n40 [label="f (x : 234)"]
+n40 -- n41
+n41 [label="NUM: 234"]
+n38 -- n42
+n42 [label="t_ (x : 28782)"]
+n42 -- n43
+n43 [label="EPS"]
+n33 -- n44
+n44 [label="e_ (x : -95667)"]
+n44 -- n45
+n45 [label="EPS"]
+}

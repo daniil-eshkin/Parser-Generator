@@ -1,0 +1,34 @@
+grammar Expr;
+
+@nonterminals
+e returns[int x, boolean intDiv]
+    : t e_<e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv; }};
+
+e_[int acc] returns [int x, boolean intDiv]
+    : PLUS t e_<acc + e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv; }}
+    | MINUS t e_<acc - e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv; }}
+    | EPS {{ res.x = acc; res.intDiv = false; }};
+
+t returns [int x, boolean intDiv]
+    : f t_<e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv; }};
+
+t_[int acc] returns [int x, boolean intDiv]
+    : MUL f t_<acc * e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv; }}
+    | DIV f t_<acc / e0.x> {{ res.x = e1.x; res.intDiv = e0.intDiv || e1.intDiv || (acc % e0.x == 0); }}
+    | EPS {{ res.x = acc; res.intDiv = false; }};
+
+f returns [int x, boolean intDiv]
+    : LB e RB {{ res.x = e0.x; res.intDiv = e0.intDiv; }}
+    | NUM {{ res.x = Integer.parseInt(v0); res.intDiv = false; }};
+
+@start : e
+
+@terminals
+PLUS : "\\+";
+MINUS : "-";
+MUL : "\\*";
+DIV : "/";
+LB : "\\(";
+RB : "\\)";
+NUM : "[0-9]+";
+POWER : "\\^";
